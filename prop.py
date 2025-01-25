@@ -1,0 +1,65 @@
+from flask import Flask, render_template_string
+
+app = Flask(__name__)
+
+# HTML template for the proposal page
+proposal_html = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            margin-top: 1rem;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #ff4757;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💖 HEY APU THIS IS YOUR ASHU...💖</h1>
+        <h1>💖 Will You Be My Girlfriend? 💖</h1>
+        <p>You make my world brighter, my days happier, and my heart fuller. Will you take this journey with me?</p>
+        <a class="btn" href="#" onclick="alert('hurrah ! Thank you for trusting me apu😘  💕')">Yes</a>
+        <a class="btn" href="#" style="background: #ccc;" onclick="alert('Oh no!But...Thank you for being honest with me.  😢')">No</a>
+    </div>
+</body>
+</html>
+"""
+
+@app.route('/')
+def proposal():
+    return render_template_string(proposal_html)
+
+if __name__ == '__main__':
+    print("Your proposal link is ready! Visit http://127.0.0.1:5000")
+    app.run(debug=True)
